@@ -15,3 +15,6 @@ class DialogBoxOneButtonBuilder(DialogBoxBuilder):
 
     def build_button1(self):
         self._dialog_box.add_button1(QPushButton('button1', self._dialog_box))
+
+    def build_button2(self):
+        pass
