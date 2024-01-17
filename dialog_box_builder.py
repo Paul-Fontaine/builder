@@ -14,16 +14,16 @@ class DialogBoxBuilder:
 
     @abstractmethod
     def build_title(self):
-        raise NotImplementedError
+        pass
 
     @abstractmethod
     def build_text(self):
-        raise NotImplementedError
+        pass
 
     @abstractmethod
     def build_button1(self):
-        raise NotImplementedError
+        pass
 
     @abstractmethod
     def build_button2(self):
-        raise NotImplementedError
+        pass
