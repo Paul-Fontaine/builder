@@ -6,18 +6,21 @@ class DialogBoxDirector:
         self.__dialog_box_builder: DialogBoxBuilder = None
 
     def set_dialog_box_builder(self, dbb: DialogBoxBuilder):
-        self.__dialog_box_builder = dbb
+        self.__dialog_box_builder: DialogBoxBuilder = dbb
 
     def get_dialog_box(self):
-        self.__dialog_box_builder.get_dialog_box()
+        return self.__dialog_box_builder.get_dialog_box()
 
     def build_dialog_box(self):
         if self.__dialog_box_builder is None:
-            raise AttributeError
+            print('No builder set !')
+            raise AttributeError('No builder set !')
 
-        dbb = self.__dialog_box_builder
-        dbb.create_new_dialog_box()
-        dbb.build_title()
-        dbb.build_text()
-        dbb.build_button1()
-        dbb.build_button2()
+        self.__dialog_box_builder\
+            .create_new_dialog_box()\
+            .build_title()\
+            .build_text()
+
+        for _ in range(self.__dialog_box_builder.number_of_buttons):
+            self.__dialog_box_builder.build_button()
+
