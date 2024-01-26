@@ -13,8 +13,7 @@ class DialogBoxDirector:
 
     def build_dialog_box(self):
         if self.__dialog_box_builder is None:
-            print('No builder set !')
-            raise AttributeError('No builder set !')
+            raise AttributeError("No builder set ! You can't build without a builder. use set_dialog_box_builder()")
 
         self.__dialog_box_builder\
             .create_new_dialog_box()\
@@ -23,4 +22,3 @@ class DialogBoxDirector:
 
         for _ in range(self.__dialog_box_builder.number_of_buttons):
             self.__dialog_box_builder.build_button()
-
